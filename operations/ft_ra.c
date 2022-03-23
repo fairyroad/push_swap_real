@@ -12,15 +12,14 @@
 
 #include "../push_swap.h"
 
-void	ra(t_stack *a)
+void	ra(t_push *push)
 {
-	t_node	*node;
+	t_stack		*node;
 	int		tmp;
 
-	tmp = a->first->content;
-	node = a->first->next;
-	list_add_last(a, tmp);
-	list_remove(a, a->first, free);
-	a->first = node;
+	node = push->a;
+	tmp = *((int *) node->first->next->content);
+	*((int *) node->first->next->content) = *((int *) node->first->content);
+	*((int *) node->first->content) = tmp;
 	write(1, "ra\n", 3);
 }
