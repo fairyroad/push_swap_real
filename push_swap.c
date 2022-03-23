@@ -14,27 +14,26 @@
 
 int	main(int	argc, char	**argv)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_push	tmp;
 	t_tab	copy;
 
-	parse_arguments(argc, argv, a, b);
-	copy = convert_to_tab(a);
+	stacks = parse_arguments(argc, argv);
+	copy = convert_to_tab(tmp.a);
 	if (check_duplicate(&copy))
 	{
 		if (!check_sorted(&copy))
 		{
-			format_stack(a);
-			if (a->size > 5)
-				sort_bigsize(a, b);
+			format_stack(tmp.a);
+			if (tmp.a->size > 5)
+				sort_bigsize(&tmp);
 			else
-				sort_smallsize(a, b);
+				sort_smallsize(&tmp);
 		}
 	}
 	else
 		write(1, "ERROR\n", 6);
 	free(copy.v);
-	list_clear(a, free);
-	list_clear(b, free);
+	list_clear(tmp.a, free);
+	list_clear(tmp.b, free);
 	return (0);
 }
