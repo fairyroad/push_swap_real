@@ -16,16 +16,18 @@ void	rr(t_push *push)
 {
 	t_stack		*node;
 	t_stack		*node2;
-	int		tmp;
-	int		tmp2;
+	int		*tmp;
+	int		*tmp2;
 
-	node = push->a;
-	node2 = push->b;
-	tmp = *((int *) node->first->next->content);
-	tmp2 = *((int *) node2->first->next->content);
-	*((int *) node->first->next->content) = *((int *) node->first->content);
-	*((int *) node2->first->next->content) = *((int *) node2->first->content);
-	*((int *) node->first->content) = tmp;
-	*((int *) node2->first->content) = tmp2;
+	tmp = malloc(sizeof(int));
+	tmp2 = malloc(sizeof(int));
+	*tmp = *((int *) push->a->first->content);
+	*tmp2 = *((int *) push->b->first->content);
+	node = push->a->first->next;
+	node2 = push->b->first->next;
+	list_add_back(push->a, tmp);
+	list_add_back(push->b, tmp2);
+	list_remove(push->a, push->a->first, free);
+	list_remove(push->b, push->b->first, free);
 	write(1, "rr\n", 3);
 }
