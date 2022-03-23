@@ -12,15 +12,14 @@
 
 #include "../push_swap.h"
 
-void	rb(t_stack *b)
+void	rb(t_push *push)
 {
-	t_node	*node;
+	t_stack		*node;
 	int		tmp;
 
-	tmp = b->first->content;
-	node = b->first->next;
-	list_add_last(b, tmp);
-	list_remove(b, b->first, free);
-	b->first = node;
+	node = push->b;
+	tmp = *((int *) node->first->next->content);
+	*((int *) node->first->next->content) = *((int *) node->first->content);
+	*((int *) node->first->content) = tmp;
 	write(1, "rb\n", 3);
 }
