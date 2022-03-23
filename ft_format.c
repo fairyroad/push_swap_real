@@ -37,3 +37,12 @@ void	format_stack(t_stack	*a)
 	}
 	free(copy.v);
 }
+
+t_push	initialize_push(void)
+{
+	t_push	tmp;
+	
+	tmp.a = list_create();
+	tmp.b = list_create();
+	return (tmp);
+}
