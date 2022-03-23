@@ -22,5 +22,6 @@ void	ra(t_push *push)
 	node = push->a->first->next;
 	list_add_last(push->a, tmp);
 	list_remove(push->a, push->a->first, free);
+	push->a->first = node;
 	write(1, "ra\n", 3);
 }
