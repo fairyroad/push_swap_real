@@ -37,6 +37,7 @@ SRCS = operations/ft_pa.c \
        utils/list_add_last.c \
        utils/list_remove.c \
        utils/list_clear.c \
+       utils/list_create.c \
 	   utils/list_create_node.c \
 	   utils/list_init.c \
 	   utils/ft_strlcpy.c \
