@@ -4,7 +4,7 @@ t_stack	*list_create(void)
 {
 	t_stack	*tmp;
 
-	tmp = (t_stack *) malloc(sizeof(t_stack));
+	tmp = (t_stack *)malloc(sizeof(t_stack));
 	if (tmp == NULL)
 		return (NULL);
 	tmp->first = NULL;
