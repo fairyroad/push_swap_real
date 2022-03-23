@@ -12,11 +12,9 @@
 
 NAME = push_swap
 
-CC = gcc
-
-CFLAG = -Wall -Wextra -Werror
-
-INCLUDES = push_swap.h
+SOURCES			:=	./sources
+INCLUDES		:=	./includes
+OBJECTS			:=	./bin
 
 SRCS = operations/ft_pa.c \
        operations/ft_pb.c \
@@ -48,15 +46,20 @@ SRCS = operations/ft_pa.c \
        ft_tab.c \
        push_swap.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS := $(addprefix ${OBJECTS}/, $(SRCS:.c=.o))
+
+CC := gcc
+CFLAGS := -Wall -Wextra -Werror
+CINCLUDES := -I ${INCLUDES}
+
+${OBJECTS}/%.o: ${SOURCES}/%.c
+	@mkdir -p $(dir $@)
+	@${CC} ${CFLAGS} -o $@ -c $< ${CINCLUDES}
 
 all : $(NAME)
 
-$(NAME) : $(OBJS) $(INCLUDES)
-	@ar rcs $(NAME) $(OBJS) $(INCLUDES)
-
-%.o : %.c $(INCLUDES)
-	@$(CC) $(FLAG) -o $@ -c $<
+${NAME}: ${OBJS}
+	@${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 clean :
 	@rm -rf $(OBJS)
