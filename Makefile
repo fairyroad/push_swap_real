@@ -10,16 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-CFLAG = -Wall -Wextra -Werror
 NAME = push_swap.a
+
+CC = gcc
+
+CFLAG = -Wall -Wextra -Werror
 
 RM = rm -f
 
-AR = ar
-ARFLAGS = cr
-
-INCLUDES = ./push_swap.h
+INCLUDES = push_swap.h
 
 SRCS = operations/ft_pa.c \
        operations/ft_pb.c \
@@ -54,17 +53,17 @@ OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
 
-.c.o: $(SRCS)
-		$(CC) $(CFLAGS) -c -o $@ $<
+$(NAME) : $(OBJS) $(INCLUDES)
+	@ar rcs $(NAME) $(OBJS) $(INCLUDE)
 
-$(NAME) : $(OBJS)
-	$(AR) $(ARFLAGS) $@ $^
+%.o : %.c $(INCLUDE)
+	@$(CC) $(FLAG) -o $@ -c $<
 
 clean :
-	$(RM) $(OBJS)
+	@rm -rf $(OBJS)
 
 fclean : clean
-	$(RM) $(NAME)
+	@rm -rf $(NAME)
 
 re : fclean all
 
