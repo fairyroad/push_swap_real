@@ -14,8 +14,8 @@
 
 void	rr(t_push *push)
 {
-	t_stack		*node;
-	t_stack		*node2;
+	t_push		*node;
+	t_push		*node2;
 	int		*tmp;
 	int		*tmp2;
 
