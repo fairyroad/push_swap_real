@@ -14,7 +14,7 @@
 
 void	rb(t_push *push)
 {
-	t_stack		*node;
+	t_push		*node;
 	int		*tmp;
 
 	tmp = malloc(sizeof(int));
