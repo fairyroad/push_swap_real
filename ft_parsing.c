@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static void	parse_array(t_stack *a, int argc, char **argv, int start)
+static void	parse_array(t_push *tmp, int argc, char **argv, int start)
 {
 	int		i;
-	int		tmp;
+	int		*tmp;
 
 	i = start;
 	while (i < argc)
@@ -25,13 +25,14 @@ static void	parse_array(t_stack *a, int argc, char **argv, int start)
 			write(1, "ERROR\n", 6);
 			exit(1);
 		}
-		tmp = ft_atoi(argv[i]);
-		list_add_last(a, tmp);
+		tmp = malloc(sizeof(int));
+		*tmp = ft_atoi(argv[i]);
+		list_add_last(tmp->a, tmp);
 		i++;
 	}
 }
 
-static void	parse_string(t_stack *a, char *argv)
+static void	parse_string(t_push *tmp, char *argv)
 {
 	char	**num;
 	int		i;
@@ -40,19 +41,21 @@ static void	parse_string(t_stack *a, char *argv)
 	i = 0;
 	while (num[i] != NULL)
 		i++;
-	parse_array(a, i, num, 0);
+	parse_array(tmp, i, num, 0);
 	i = 0;
 	while (num[i] != NULL)
 		free(num[i++]);
 	free(num);
 }
 
-void	parse_arguments(int argc, char **argv, t_stack *a, t_stack *b)
+t_push	parse_arguments(int argc, char **argv)
 {
-	a = list_init();
-	b = list_init();
+	t_push	tmp;
+	
+	tmp = initialize_push();
 	if (argc == 2 && !check_integer(argv[1]))
-		parse_string(a, argv[1]);
+		parse_string(&tmp, argv[1]);
 	else
-		parse_array(a, argc, argv, 1);
+		parse_array(&tmp, argc, argv, 1);
+	return (tmp);
 }
