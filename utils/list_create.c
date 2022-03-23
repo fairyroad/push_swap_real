@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 t_stack	*list_create(void)
 {
 	t_stack	*tmp;
