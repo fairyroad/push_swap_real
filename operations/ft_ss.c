@@ -12,16 +12,20 @@
 
 #include "../push_swap.h"
 
-void	ss(t_stack *a, t_stack *b)
+void	ss(t_push *push)
 {
-	int		tmp_a;
-	int		tmp_b;
+	t_stack		*node;
+	t_stack		*node2;
+	int		tmp;
+	int		tmp2;
 
-	tmp_a = a->first->content;
-	tmp_b = b->first->content;
-	a->first->content = a->first->next->content;
-	b->first->content = b->first->next->content;
-	a->first->next->content = tmp_a;
-	b->first->next->content = tmp_b;
+	node = push->a;
+	node2 = push->b;
+	tmp = *((int *) node->first->next->content);
+	tmp2 = *((int *) node2->first->next->content);
+	*((int *) node->first->next->content) = *((int *) node->first->content);
+	*((int *) node2->first->next->content) = *((int *) node2->first->content);
+	*((int *) node->first->content) = tmp;
+	*((int *) node2->first->content) = tmp2;
 	write(1, "ss\n", 3);
 }
