@@ -25,7 +25,7 @@ typedef struct s_node
 {
 	struct s_node	*prev;
 	struct s_node	*next;
-	int				content;
+	void				*content;
 }	t_node;
 
 typedef struct s_stack
@@ -40,6 +40,12 @@ typedef struct s_tab
 	int		*v;
 	int		size;
 }	t_tab;
+
+typedef struct s_push
+{
+	t_stack	*a;
+	t_stack	*b;
+}	t_push;
 
 t_tab		convert_to_tab(t_stack	*a);
 int			check_integer(char	*str);
