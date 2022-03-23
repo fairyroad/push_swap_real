@@ -15,11 +15,12 @@
 void	rb(t_push *push)
 {
 	t_stack		*node;
-	int		tmp;
+	int		*tmp;
 
-	node = push->b;
-	tmp = *((int *) node->first->next->content);
-	*((int *) node->first->next->content) = *((int *) node->first->content);
-	*((int *) node->first->content) = tmp;
+	tmp = malloc(sizeof(int));
+	*tmp = *((int *) push->b->first->content);
+	node = push->b->first->next;
+	list_add_back(push->b, tmp);
+	list_remove(push->b, push->b->first, free);
 	write(1, "rb\n", 3);
 }
