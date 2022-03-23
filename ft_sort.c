@@ -12,76 +12,80 @@
 
 #include "push_swap.h"
 
-static void	sort_three(t_stack *a)
+static void	sort_three(t_push *tmp)
 {
 	int		first;
 	int		second;
 	int		third;
 
-	first = a->first->content;
-	second = a->first->next->content;
-	third = a->last->content;
+	first = *((int *) tmp->a->first->content);
+	second = *((int *) tmp->a->first->next->content);
+	third = *((int *) tmp->a->last->content);
 	if (first > second && second < third && first < third)
-		sa(a);
+		sa(tmp);
 	else if (first > second && second > third)
 	{
-		sa(a);
-		rra(a);
+		sa(tmp);
+		rra(tmp);
 	}
 	else if (first < second && second > third && first < third)
 	{
-		sa(a);
-		ra(a);
+		sa(tmp);
+		ra(tmp);
 	}
 	else if (first > second && second < third && first > third)
-		ra(a);
+		ra(tmp);
 	else if (first < second && second > third && first > third)
-		rra(a);
+		rra(tmp);
 }
 
-static void	sort_fourfive(t_stack	*a, t_stack	*b, int	pivot)
+static void	sort_fourfive(t_push *tmp, int	pivot)
 {
 	int		cnt;
-
+	t_stack		*a;
+	t_stack		*b;
+	
+	a = tmp->a;
+	b = tmp->b;
 	cnt = 0;
 	while (cnt < pivot)
 	{
-		if (a->first->content < pivot)
+		if (*((int *) a->first->content) < pivot)
 		{
-			pb(a, b);
+			pb(tmp);
 			cnt++;
 		}
 		else
-			ra(a);
+			ra(tmp);
 	}
-	sort_three(a);
+	sort_three(tmp);
 	if (pivot > 1)
 	{
-		if (b->first->content < b->last->content)
-			sb(b);
-		pa(a, b);
+		if (*((int *) b->first->content < *((int *) b->last->content))
+			sb(tmp);
+		pa(tmp);
 	}
-	pa(a, b);
+	pa(tmp);
 }
 
-void	sort_smallsize(t_stack	*a, t_stack	*b)
+void	sort_smallsize(t_push *tmp)
 {
 	int		first;
 	int		last;
 
-	first = a->first->content;
-	last = a->last->content;
-	if (a->size == 2 && first > last)
-		ra(a);
+	first = *((int *) tmp->a->first->content);
+	last = *((int *) tmp->a->last->content);
+	if (tmp->a->size == 2 && first > last)
+		ra(tmp);
 	else if (a->size == 3)
-		sort_three(a);
+		sort_three(tmp);
 	else if (a->size == 4)
-		sort_fourfive(a, b, 1);
+		sort_fourfive(tmp, 1);
 	else if (a->size == 5)
-		sort_fourfive(a, b, 2);
+		sort_fourfive(tmp, 2);
 }
 
-void	sort_bigsize(t_stack *a, t_stack *b)
+void	sort_bigsize(t_push *tmp)
 {
 	int		size;
 	int		bit;
@@ -89,7 +93,7 @@ void	sort_bigsize(t_stack *a, t_stack *b)
 	int		i;
 	int		j;
 
-	size = a->size;
+	size = tmp->a->size;
 	bit = 0;
 	while ((size - 1) >> bit != 0)
 		bit++;
@@ -99,13 +103,13 @@ void	sort_bigsize(t_stack *a, t_stack *b)
 		j = -1;
 		while (++j < size)
 		{
-			top = a->first->content;
+			top = *((int *) tmp->a->first->content);
 			if (((top >> i) & 1) == 1)
-				ra(a);
+				ra(tmp);
 			else
-				pb(a, b);
+				pb(tmp);
 		}
-		while (b->first != NULL)
-			pa(a, b);
+		while (tmp->b->first != NULL)
+			pa(tmp);
 	}
 }
