@@ -12,12 +12,14 @@
 
 #include "../push_swap.h"
 
-void	sa(t_stack *a)
+void	sa(t_push *push)
 {
+	t_stack		*node;
 	int		tmp;
 
-	tmp = a->first->content;
-	a->first->content = a->first->next->content;
-	a->first->next->content = tmp;
+	node = push->a;
+	tmp = *((int *) node->first->next->content);
+	*((int *) node->first->next->content) = *((int *) node->first->content);
+	*((int *) node->first->content) = tmp;
 	write(1, "sa\n", 3);
 }
