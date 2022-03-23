@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack	*list_create(void)
 {
