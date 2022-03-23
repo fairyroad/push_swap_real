@@ -25,8 +25,8 @@ void	rr(t_push *push)
 	*tmp2 = *((int *) push->b->first->content);
 	node = push->a->first->next;
 	node2 = push->b->first->next;
-	list_add_back(push->a, tmp);
-	list_add_back(push->b, tmp2);
+	list_add_last(push->a, tmp);
+	list_add_last(push->b, tmp2);
 	list_remove(push->a, push->a->first, free);
 	list_remove(push->b, push->b->first, free);
 	write(1, "rr\n", 3);
