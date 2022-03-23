@@ -12,22 +12,20 @@
 
 #include "../push_swap.h"
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_push *push)
 {
-	t_node	*node_a;
-	t_node	*node_b;
-	int		tmp_a;
-	int		tmp_b;
+	t_stack		*node;
+	t_stack		*node2;
+	int		tmp;
+	int		tmp2;
 
-	tmp_a = a->first->content;
-	tmp_b = b->first->content;
-	node_a = a->first->next;
-	node_b = b->first->next;
-	list_add_last(a, tmp_a);
-	list_add_last(b, tmp_b);
-	list_remove(a, a->first, free);
-	list_remove(b, b->first, free);
-	a->first = node_a;
-	b->first = node_b;
+	node = push->a;
+	node2 = push->b;
+	tmp = *((int *) node->first->next->content);
+	tmp2 = *((int *) node2->first->next->content);
+	*((int *) node->first->next->content) = *((int *) node->first->content);
+	*((int *) node2->first->next->content) = *((int *) node2->first->content);
+	*((int *) node->first->content) = tmp;
+	*((int *) node2->first->content) = tmp2;
 	write(1, "rr\n", 3);
 }
