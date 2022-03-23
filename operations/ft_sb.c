@@ -11,12 +11,15 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-void	sb(t_stack *b)
+
+void	sb(t_push *push)
 {
+	t_stack		*node;
 	int		tmp;
 
-	tmp = b->first->content;
-	b->first->content = b->first->next->content;
-	b->first->next->content = tmp;
+	node = push->b;
+	tmp = *((int *) node->first->next->content);
+	*((int *) node->first->next->content) = *((int *) node->first->content);
+	*((int *) node->first->content) = tmp;
 	write(1, "sb\n", 3);
 }
