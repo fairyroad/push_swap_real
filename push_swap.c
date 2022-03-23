@@ -17,7 +17,7 @@ int	main(int	argc, char	**argv)
 	t_push	tmp;
 	t_tab	copy;
 
-	stacks = parse_arguments(argc, argv);
+	tmp = parse_arguments(argc, argv);
 	copy = convert_to_tab(tmp.a);
 	if (check_duplicate(&copy))
 	{
