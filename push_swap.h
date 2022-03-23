@@ -15,11 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdarg.h>
 # include <string.h>
-# include <fcntl.h>
-# include <sys/types.h>
-# include <sys/stat.h>
 
 typedef struct s_node
 {
@@ -62,24 +58,24 @@ int			ft_isspace(int c);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 int			ft_atoi(const char *str);
 char		**ft_split(char const *str, char c);
-void		list_add_front(t_stack *a, int val);
-void		list_add_last(t_stack *a, int content);
+void		list_add_front(t_stack *a, void *val);
+void		list_add_last(t_stack *a, void *content);
 void		list_remove(t_stack *a, t_node *node, void (*del)(void*));
 void		list_clear(t_stack *a, void (*del)(void*));
-t_node		*list_create_node(int content);
+t_node		*list_create_node(void *content);
 t_stack		*list_init(void);
 
-void		pa(t_stack *a, t_stack *b);
-void		pb(t_stack *a, t_stack *b);
-void		ra(t_stack *a);
-void		rb(t_stack *b);
-void		rr(t_stack *a, t_stack *b);
-void		rra(t_stack *a);
-void		rrb(t_stack *b);
-void		rrr(t_stack *a, t_stack *b);
-void		sa(t_stack *a);
-void		sb(t_stack *b);
-void		ss(t_stack *a, t_stack *b);
-void		parse_arguments(int argc, char **argv, t_stack *a, t_stack *b);
+void		pa(t_push *push);
+void		pb(t_push *push);
+void		ra(t_push *push);
+void		rb(t_push *push);
+void		rr(t_push *push);
+void		rra(t_push *push);
+void		rrb(t_push *push);
+void		rrr(t_push *push);
+void		sa(t_push *push);
+void		sb(t_push *push);
+void		ss(t_push *push);
+void		parse_arguments(int argc, char **argv);
 
 #endif
