@@ -16,8 +16,6 @@ CC = gcc
 
 CFLAG = -Wall -Wextra -Werror
 
-RM = rm -f
-
 INCLUDES = push_swap.h
 
 SRCS = operations/ft_pa.c \
