@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	list_add_last(t_stack *a, int content)
+void	list_add_last(t_stack *a, void *content)
 {
 	t_node	*tmp;
 	t_node	*node;
