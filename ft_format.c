@@ -18,22 +18,18 @@ void	format_stack(t_stack	*a)
 	t_tab	copy;
 	int		index;
 	int		*val;
-	int		*con;
 
 	copy = convert_to_tab(a);
 	sort_tab(&copy);
 	tmp = a->first;
 	while (tmp != NULL)
 	{
-		index = find_index(&copy, tmp->content);
+		index = find_index(&copy, *((int *) tmp->content);
 		val = malloc(sizeof(int));
-		con = malloc(sizeof(int));
 		*val = index;
-		*con = tmp->content;
-		free(con);
-		tmp->content = *val;
-		tmp = tmp->next;
 		free(val);
+		tmp->content = val;
+		tmp = tmp->next;
 	}
 	free(copy.v);
 }
