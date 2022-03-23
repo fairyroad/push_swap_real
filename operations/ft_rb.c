@@ -20,7 +20,7 @@ void	rb(t_push *push)
 	tmp = malloc(sizeof(int));
 	*tmp = *((int *) push->b->first->content);
 	node = push->b->first->next;
-	list_add_back(push->b, tmp);
+	list_add_last(push->b, tmp);
 	list_remove(push->b, push->b->first, free);
 	write(1, "rb\n", 3);
 }
