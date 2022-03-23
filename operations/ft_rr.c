@@ -14,8 +14,8 @@
 
 void	rr(t_push *push)
 {
-	t_push		*node;
-	t_push		*node2;
+	t_node		*node;
+	t_node		*node2;
 	int		*tmp;
 	int		*tmp2;
 
@@ -29,5 +29,7 @@ void	rr(t_push *push)
 	list_add_last(push->b, tmp2);
 	list_remove(push->a, push->a->first, free);
 	list_remove(push->b, push->b->first, free);
+	push->a->first = node;
+	push->b->first = node;
 	write(1, "rr\n", 3);
 }
