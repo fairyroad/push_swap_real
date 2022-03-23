@@ -12,16 +12,16 @@
 
 #include "../push_swap.h"
 
-void	pb(t_push *tmp)
+void	pb(t_push *pus)
 {
 	t_node	*node;
 	int		*tmp;
 
 	tmp = malloc(sizeof(int));
-	*tmp = *((int *) tmp->a->first->content);
-	list_add_front(tmp->b, tmp);
-	node = tmp->a->first->next;
-	list_remove(tmp->b, tmp->a->first, free);
-	tmp->a->first = node;
+	*tmp = *((int *) push->a->first->content);
+	list_add_front(push->b, tmp);
+	node = push->a->first->next;
+	list_remove(push->b, push->a->first, free);
+	push->a->first = node;
 	write(1, "pb\n", 3);
 }
