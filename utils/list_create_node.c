@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-t_node	*list_create_node(int content)
+t_node	*list_create_node(void *content)
 {
 	t_node	*node;
 
