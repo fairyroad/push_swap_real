@@ -20,12 +20,11 @@ void	list_add_last(t_stack *a, int content)
 	node = list_create_node(content);
 	tmp = a->first;
 	if (tmp == NULL)
-	{
 		a->first = node;
-		a->last = node;
-	}
 	else
 	{
+		if (a->last == NULL)
+			a->last = tmp;
 		a->last->next = node;
 		a->last = node;
 		node->prev = a->last;
