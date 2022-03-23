@@ -76,6 +76,6 @@ void		rrr(t_push *push);
 void		sa(t_push *push);
 void		sb(t_push *push);
 void		ss(t_push *push);
-void		parse_arguments(int argc, char **argv);
+t_push		parse_arguments(int argc, char **argv);
 
 #endif
