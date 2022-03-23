@@ -61,7 +61,7 @@ static void	sort_fourfive(t_push *tmp, int	pivot)
 	sort_three(tmp);
 	if (pivot > 1)
 	{
-		if (*((int *) b->first->content < *((int *) b->last->content))
+		if (*((int *) b->first->content) < *((int *) b->last->content))
 			sb(tmp);
 		pa(tmp);
 	}
@@ -77,11 +77,11 @@ void	sort_smallsize(t_push *tmp)
 	last = *((int *) tmp->a->last->content);
 	if (tmp->a->size == 2 && first > last)
 		ra(tmp);
-	else if (a->size == 3)
+	else if (tmp->a->size == 3)
 		sort_three(tmp);
-	else if (a->size == 4)
+	else if (tmp->a->size == 4)
 		sort_fourfive(tmp, 1);
-	else if (a->size == 5)
+	else if (tmp->a->size == 5)
 		sort_fourfive(tmp, 2);
 }
 
