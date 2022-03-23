@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 
 CC = gcc
 
@@ -55,9 +55,9 @@ OBJS = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS) $(INCLUDES)
-	@ar rcs $(NAME) $(OBJS) $(INCLUDE)
+	@ar rcs $(NAME) $(OBJS) $(INCLUDES)
 
-%.o : %.c $(INCLUDE)
+%.o : %.c $(INCLUDES)
 	@$(CC) $(FLAG) -o $@ -c $<
 
 clean :
