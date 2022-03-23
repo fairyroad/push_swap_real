@@ -12,23 +12,25 @@
 
 #include "../push_swap.h"
 
-void	list_add_front(t_stack *a, int val)
+void	list_add_front(t_stack *a, void *val)
 {
 	t_node	*node;
+	t_node	*last;
 	t_node	*head;
 
 	head = a->first;
 	node = list_create_node(val);
 	if (head == NULL)
-	{
 		a->first = node;
-		a->last = node;
-	}
 	else
 	{
+		last = a->last;
+		if (last == NULL)
+			last = head;
 		node->next = head;
 		head->prev = node;
 		a->first = node;
+		a->last = last;
 	}
 	a->size++;
 }
