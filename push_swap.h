@@ -63,6 +63,7 @@ void		list_add_last(t_stack *a, void *content);
 void		list_remove(t_stack *a, t_node *node, void (*del)(void*));
 void		list_clear(t_stack *a, void (*del)(void*));
 t_node		*list_create_node(void *content);
+t_stack		*list_create(void);
 t_stack		*list_init(void);
 
 void		pa(t_push *push);
