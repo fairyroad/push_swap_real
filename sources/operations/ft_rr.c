@@ -30,6 +30,6 @@ void	rr(t_push *push)
 	list_remove(push->a, push->a->first, free);
 	list_remove(push->b, push->b->first, free);
 	push->a->first = node;
-	push->b->first = node;
+	push->b->first = node2;
 	write(1, "rr\n", 3);
 }
