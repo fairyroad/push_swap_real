@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	pb(t_push *pus)
+void	pb(t_push *push)
 {
 	t_node	*node;
 	int		*tmp;
