@@ -27,7 +27,7 @@ void	format_stack(t_stack	*a)
 		index = find_index(&copy, *((int *) tmp->content));
 		val = malloc(sizeof(int));
 		*val = index;
-		free(val);
+		free(tmp->val);
 		tmp->content = val;
 		tmp = tmp->next;
 	}
