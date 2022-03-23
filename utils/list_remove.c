@@ -14,15 +14,10 @@
 
 void	list_remove(t_stack *a, t_node *node, void (*del)(void *))
 {
-	int	*val;
-
 	if (node != NULL)
 	{
-		val = malloc(sizeof(int));
-		*val = node->content;
-		del(val);
+		del(node->content);
 		free(node);
-		free(val);
 		a->size--;
 	}
 }
