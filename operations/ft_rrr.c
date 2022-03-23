@@ -12,22 +12,24 @@
 
 #include "../push_swap.h"
 
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_push *push)
 {
-	int		tmp_a;
-	int		tmp_b;
-	t_node	*node_a;
-	t_node	*node_b;
+	int		*tmp;
+	int		*tmp2;
+	t_node	*node;
+	t_node	*node2;
 
-	tmp_a = a->last->content;
-	tmp_b = b->last->content;
-	list_add_front(a, tmp_a);
-	list_add_front(b, tmp_b);
-	node_a = a->last->prev;
-	node_b = b->last->prev;
-	node_a->next = NULL;
-	node_b->next = NULL;
-	a->last = node_a;
-	b->last = node_b;
+	tmp = malloc(sizeof(int));
+	tmp2 = malloc(sizeof(int));
+	*tmp = *((int *) push->a->last->content);
+	*tmp2 = *((int *) push->b->last->content);
+	node = push->a->last->prev;
+	node2 = push->b->last->prev;
+	node->next = NULL;
+	node2->next = NULL;
+	push->a->last = node;
+	push->b->last = node2;
+	list_add_front(push->a, tmp);
+	list_add_front(push->b, tmp2);
 	write(1, "rrr\n", 4);
 }
