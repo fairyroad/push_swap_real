@@ -24,7 +24,7 @@ t_tab	convert_to_tab(t_stack *a)
 	tmp = a->first;
 	while (tmp != NULL)
 	{
-		tab.v[i++] = tmp->content;
+		tab.v[i++] = *((int *)tmp->content);
 		tmp = tmp->next;
 	}
 	return (tab);
