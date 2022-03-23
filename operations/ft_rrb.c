@@ -12,15 +12,16 @@
 
 #include "../push_swap.h"
 
-void	rrb(t_stack *b)
+void	rrb(t_push *push)
 {
-	int		tmp;
+	int		*tmp;
 	t_node	*node;
 
-	tmp = b->last->content;
-	list_add_front(b, tmp);
-	node = b->last->prev;
+	tmp = malloc(sizeof(int));
+	*tmp = *((int *) push->b->last->content);
+	node = push->b->last->prev;
 	node->next = NULL;
-	b->last = node;
+	push->b->last = node;
+	list_add_front(push->b, tmp);
 	write(1, "rrb\n", 4);
 }
