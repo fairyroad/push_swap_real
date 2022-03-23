@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	parse_array(t_push *tmp, int argc, char **argv, int start)
+static void	parse_array(t_push *push, int argc, char **argv, int start)
 {
 	int		i;
 	int		*tmp;
@@ -27,7 +27,7 @@ static void	parse_array(t_push *tmp, int argc, char **argv, int start)
 		}
 		tmp = malloc(sizeof(int));
 		*tmp = ft_atoi(argv[i]);
-		list_add_last(tmp->a, tmp);
+		list_add_last(push->a, tmp);
 		i++;
 	}
 }
