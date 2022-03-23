@@ -77,5 +77,6 @@ void		sa(t_push *push);
 void		sb(t_push *push);
 void		ss(t_push *push);
 t_push		parse_arguments(int argc, char **argv);
+t_push		initialize_push(void);
 
 #endif
