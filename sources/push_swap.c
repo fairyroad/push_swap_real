@@ -31,7 +31,7 @@ int	main(int	argc, char	**argv)
 		}
 	}
 	else
-		write(1, "mainERROR\n", 10);
+		write(1, "ERROR\n", 6);
 	free(copy.v);
 	list_clear(tmp.a, free);
 	list_clear(tmp.b, free);
