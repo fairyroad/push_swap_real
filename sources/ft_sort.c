@@ -6,7 +6,7 @@
 /*   By: ygil <ygil@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 22:05:29 by ygil              #+#    #+#             */
-/*   Updated: 2022/03/17 18:38:03 by ygil             ###   ########.fr       */
+/*   Updated: 2022/03/25 14:50:41 by ygil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ static void	sort_three(t_push *tmp)
 static void	sort_fourfive(t_push *tmp, int	pivot)
 {
 	int		cnt;
-	t_stack		*a;
-	t_stack		*b;
-	
+	t_stack	*a;
+	t_stack	*b;
+
 	a = tmp->a;
 	b = tmp->b;
 	cnt = 0;

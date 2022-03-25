@@ -6,7 +6,7 @@
 /*   By: ygil <ygil@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:33:46 by ygil              #+#    #+#             */
-/*   Updated: 2022/03/17 19:02:02 by ygil             ###   ########.fr       */
+/*   Updated: 2022/03/25 14:53:00 by ygil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	parse_string(t_push *tmp, char *argv)
 t_push	parse_arguments(int argc, char **argv)
 {
 	t_push	tmp;
-	
+
 	tmp = initialize_push();
 	if (argc == 2 && !check_integer(argv[1]))
 		parse_string(&tmp, argv[1]);

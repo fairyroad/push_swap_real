@@ -6,7 +6,7 @@
 /*   By: ygil <ygil@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 18:23:23 by ygil              #+#    #+#             */
-/*   Updated: 2022/03/17 19:09:53 by ygil             ###   ########.fr       */
+/*   Updated: 2022/03/25 14:43:45 by ygil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_node
 {
 	struct s_node	*prev;
 	struct s_node	*next;
-	void				*content;
+	void			*content;
 }	t_node;
 
 typedef struct s_stack

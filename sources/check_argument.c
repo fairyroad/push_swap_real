@@ -6,7 +6,7 @@
 /*   By: ygil <ygil@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:38:43 by ygil              #+#    #+#             */
-/*   Updated: 2022/03/16 21:47:36 by ygil             ###   ########.fr       */
+/*   Updated: 2022/03/25 14:50:11 by ygil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ int	check_integer(char *str)
 		i++;
 	if (str[i] == '-')
 		sign = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	if (!ft_isdigit(str[i]))
-		return (0);
 	while (str[i] != '\0')
 	{
 		if (!ft_isdigit(str[i]))

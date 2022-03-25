@@ -6,7 +6,7 @@
 /*   By: ygil <ygil@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 20:23:35 by ygil              #+#    #+#             */
-/*   Updated: 2022/03/10 20:26:24 by ygil             ###   ########.fr       */
+/*   Updated: 2022/03/25 14:51:20 by ygil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	rr(t_push *push)
 {
 	t_node		*node;
 	t_node		*node2;
-	int		*tmp;
-	int		*tmp2;
+	int			*tmp;
+	int			*tmp2;
 
 	tmp = malloc(sizeof(int));
 	tmp2 = malloc(sizeof(int));

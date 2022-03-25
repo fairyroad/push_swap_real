@@ -6,7 +6,7 @@
 /*   By: ygil <ygil@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 18:42:26 by ygil              #+#    #+#             */
-/*   Updated: 2022/03/17 18:36:53 by ygil             ###   ########.fr       */
+/*   Updated: 2022/03/25 14:51:53 by ygil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa(t_push *push)
 {
 	t_stack		*node;
-	int		tmp;
+	int			tmp;
 
 	node = push->a;
 	tmp = *((int *) node->first->next->content);

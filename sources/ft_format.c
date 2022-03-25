@@ -6,7 +6,7 @@
 /*   By: ygil <ygil@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:55:09 by ygil              #+#    #+#             */
-/*   Updated: 2022/03/17 19:24:22 by ygil             ###   ########.fr       */
+/*   Updated: 2022/03/25 14:44:35 by ygil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	format_stack(t_stack	*a)
 t_push	initialize_push(void)
 {
 	t_push	tmp;
-	
+
 	tmp.a = list_create();
 	tmp.b = list_create();
 	return (tmp);
