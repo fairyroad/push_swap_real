@@ -39,7 +39,7 @@ int	check_integer(char *str)
 			return (0);
 		i++;
 	}
-	return (sign * result);
+	return (1);
 }
 
 int	check_duplicate(t_tab	*tab)
