@@ -22,7 +22,7 @@ static void	parse_array(t_push *push, int argc, char **argv, int start)
 	{
 		if (!check_integer(argv[i]))
 		{
-			write(1, "ERROR\n", 6);
+			write(1, "parseERROR\n", 10);
 			exit(1);
 		}
 		tmp = malloc(sizeof(int));
